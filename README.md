@@ -9,3 +9,7 @@ Planned features:
 - Magical one line option which does everything for you
 - Linting before optimizing, if ok then continue (option)
 - Show result (file sizes before and after)
+
+Version 0.1.0:
+- Init node.js with depencies
+- You can run node app.js -v and node app.js -h
