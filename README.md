@@ -2,6 +2,8 @@ web-tweak-n-optimize
 ====================
 > Simple app which can optimize your image, css, js and html files. Also editing pictures to grayscale, thumbs etc.
 
+[![wercker status](https://app.wercker.com/status/09ee66ec76d4aecbfd2d5c7adcd0e60f/m "wercker status")](https://app.wercker.com/project/bykey/09ee66ec76d4aecbfd2d5c7adcd0e60f)
+
 Planned features:
 - Commandline menu interface
 - Specify which files will be edited, specify output folder
