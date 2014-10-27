@@ -13,8 +13,13 @@ Planned features:
 - Commandline menu interface
 - Specify which files will be edited, specify output folder
 - Tweak image files to thumbs, grayscale etc.
+- Optimize images
 - Linting before optimizing, if ok then continue (option)
+- Usable as a taskrunner plugin
 
+Planned used with taskrunner:
+- On detected file changes on the web project folder, run minifies and image optimization on changed files
+- User can setup the dist folder and minifed file names
 
 License:
 - MIT
@@ -22,6 +27,7 @@ License:
 
 Version 0.1.0:
 - Init node.js with depencies
-- You can run node app.js -v and node app.js -h
+- You can run node app.js -V and node app.js -h
 
-
+Vesion 0.2.0:
+- Gulp, nodeunit, testing, wercker and minify functions
