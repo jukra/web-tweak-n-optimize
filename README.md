@@ -5,7 +5,7 @@ web-tweak-n-optimize
 [![wercker status](https://app.wercker.com/status/09ee66ec76d4aecbfd2d5c7adcd0e60f/m "wercker status")](https://app.wercker.com/project/bykey/09ee66ec76d4aecbfd2d5c7adcd0e60f)
 
 Done so far:
-- Minify css, js and html files
+- Minify css, js and html files, at the moment with gulp, **in future using different depencies without gulp!**
 - Show result (file sizes before and after) in test
 - Magical one line option which does everything for you
 
@@ -17,7 +17,7 @@ Planned features:
 - Linting before optimizing, if ok then continue (option)
 - Usable as a taskrunner plugin
 
-Planned used with taskrunner:
+Planned use as a plugin with taskrunner:
 - On detected file changes on the web project folder, run minifies and image optimization on changed files
 - User can setup the dist folder and minifed file names
 
