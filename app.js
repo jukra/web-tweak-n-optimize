@@ -7,7 +7,7 @@ var opts = require("nomnom")
       help: 'Lists this message of all commands available',
    })
    .option('version', {
-      abbr: 'v',
+      abbr: 'V',
       flag: true,
       help: 'Show version number',
       callback: function() {
