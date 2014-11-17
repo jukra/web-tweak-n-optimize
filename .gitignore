@@ -1,4 +1,6 @@
 # Dependency directory
 node_modules
 test/test.js.xml
-dist
+static/min
+coverage
+npm-debug.log
