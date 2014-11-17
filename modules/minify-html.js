@@ -1,3 +1,5 @@
+"use strict";
+
 exports.htmlminifer = function (answer) {
     fs = require('fs');
     var minifyh = require('html-minifier').minify;
