@@ -43,10 +43,10 @@ exports.testMinifier = function (test) {
         console.log(ws["size"] + " bytes");
         parseInt(totalFileSize = totalFileSize + ws["size"]);
     }
-    for (var i in minifiedFilenames) {
-        var fullpath = "static/min/" + minifiedFilenames[i];
-        console.log(fullpath);
-        var wm = fs.statSync(fullpath);
+    for (var i2 in minifiedFilenames) {
+        var fullpath2 = "static/min/" + minifiedFilenames[i2];
+        console.log(fullpath2);
+        var wm = fs.statSync(fullpath2);
         console.log(wm["size"] + " bytes");
         parseInt(totalMinifiedSize = totalMinifiedSize + wm["size"]);
     }

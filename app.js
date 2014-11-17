@@ -1,3 +1,5 @@
+"use strict";
+
 var pjson = require('./package.json');
 var mc = require("./modules/minify-css.js");
 var mj = require("./modules/minify-js.js");
@@ -8,6 +10,13 @@ var rl = readline.createInterface({
     output: process.stdout
 });
 var optionselected = false;
+function printHeader() {
+    console.log("");
+    console.log("---------------------------------------");
+    console.log("W E B - T W E A K - N - O P T I M I Z E");
+    console.log("---------------------------------------");
+    console.log("");
+}
 
 var opts = require("nomnom")
     .option('help', {
@@ -85,16 +94,10 @@ if (opts.minifycss) {
         rl.close();
     });
 }
-if (optionselected == false) {
+if (optionselected === false) {
     printHeader();
     console.log("You didn't select any option, please refer to --help if needed");
+    console.log("node app.js --help");
     console.log("");
-}
-
-function printHeader() {
-    console.log("");
-    console.log("---------------------------------------");
-    console.log("W E B - T W E A K - N - O P T I M I Z E");
-    console.log("---------------------------------------");
-    console.log("");
+    process.exit();
 }

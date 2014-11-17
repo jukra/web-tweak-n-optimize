@@ -5,7 +5,7 @@ exports.jsminifer = function (answer) {
     var jsfiles = [];
     for (var i in filenames) {
         var ext = filenames[i].split('.').pop();
-        if (ext == "js") {
+        if (ext === "js") {
             jsfiles.push(filenames[i]);
         }
     }
@@ -15,16 +15,17 @@ exports.jsminifer = function (answer) {
         var file = answer + "/" + jsfiles[f];
         console.log(file);
         minify(file, {
-            returnStream: true,
+            returnStream: true
         }, function (error, stream) {
             var streamWrite = fs.createWriteStream(minfile);
-            if (error)
+            if (error) {
                 console.error(error.message);
-            else
+            } else {
                 streamWrite.write(stream);
-            streamWrite.end;
+                streamWrite.end();
+            }
         });
     }
     console.log("All done!");
     console.log("");
-}
+};

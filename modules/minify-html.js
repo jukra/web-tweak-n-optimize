@@ -5,7 +5,7 @@ exports.htmlminifer = function (answer) {
     var htmlfiles = [];
     for (var i in filenames) {
         var ext = filenames[i].split('.').pop();
-        if (ext == "html") {
+        if (ext === "html") {
             htmlfiles.push(filenames[i]);
         }
     }
@@ -26,7 +26,7 @@ exports.htmlminifer = function (answer) {
             });
             var streamWrite = fs.createWriteStream(minfile);
             streamWrite.write(result);
-            streamWrite.end;
+            streamWrite.end();
         });
     }
-}
+};

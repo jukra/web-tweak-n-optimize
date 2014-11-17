@@ -3,15 +3,18 @@ web-tweak-n-optimize
 > Simple app which can optimize your image, css, js and html files. Also editing pictures to grayscale, thumbs etc.
 
 [![wercker status](https://app.wercker.com/status/09ee66ec76d4aecbfd2d5c7adcd0e60f/m "wercker status")](https://app.wercker.com/project/bykey/09ee66ec76d4aecbfd2d5c7adcd0e60f)
+[![Coverage Status](https://img.shields.io/coveralls/jukra/web-tweak-n-optimize.svg)](https://coveralls.io/r/jukra/web-tweak-n-optimize?branch=master)
 
 Done so far:
-- Minify css, js and html files, at the moment with gulp, **in future using different depencies without gulp!**
+- Minify css, js and html files
 - Show result (file sizes before and after) in test
 - Magical one line option which does everything for you
+- Commandline menu interface (done with options, try node app.js --help)
+- Specify which files will be edited
 
 Planned features:
-- Commandline menu interface
-- Specify which files will be edited, specify output folder
+
+- Specify output folder
 - Tweak image files to thumbs, grayscale etc.
 - Optimize images
 - Linting before optimizing, if ok then continue (option)
@@ -32,3 +35,11 @@ Version 0.1.0:
 Vesion 0.2.0:
 - You can run the app with npm start and test it with npm test
 - Gulp, nodeunit, testing, wercker and minify functions
+
+Vesion 0.3.0:
+- Added possibility to run the tool with different settings (node app.js --help to view all the commands).
+- Minifies done without gulp for the future.
+- Added linting without gulp also.
+- Added more testing.
+- Addded istanbul, coveralls, and travis.
+- Added codecoverage badge to this readme file.
