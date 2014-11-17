@@ -4,6 +4,7 @@
     "dot-notation": 0,
     "quotes": 0,
     "no-console": 0,
+    "strict": 0,
     "no-process-exit": 0;
   },
   "env": {

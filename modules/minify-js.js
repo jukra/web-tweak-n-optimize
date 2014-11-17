@@ -1,5 +1,3 @@
-"use strict";
-
 exports.jsminifer = function (answer) {
     fs = require('fs');
     var minify = require('minify');
