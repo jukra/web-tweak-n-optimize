@@ -1,6 +1,5 @@
 # Dependency directory
 node_modules
 test/test.js.xml
-static/min
 coverage
 npm-debug.log
