@@ -13,12 +13,12 @@ Features:
 - Specify which files will be edited
 - Optimize images
 
-Features usable with gulp:
+Features usable with gulp plugin:
 - Specify output folder
 - Linting before optimizing, if ok then continue (eslint in pipe)
 
 Disregarded features:
-- Image grayscaling, generating thumbs etc. (out of project scope, which is focusing on optimization)
+- Image grayscaling, generating thumbs etc. (out of this projects scope, which is focusing on optimization)
 
 License:
 - MIT
@@ -43,3 +43,4 @@ Vesion 0.3.0:
 Vesion 0.4.0:
 - Added image optimization and more testing
 - Prepared project for task runner use
+- Added ability to give direct path to source file instead of just folder
