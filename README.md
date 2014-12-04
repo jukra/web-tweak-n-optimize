@@ -1,6 +1,6 @@
 web-tweak-n-optimize
 ====================
-> Simple app which can optimize your image, css, js and html files. Also editing pictures to grayscale, thumbs etc.
+> Simple app which can optimize your image, css, js and html files.
 
 [![wercker status](https://app.wercker.com/status/09ee66ec76d4aecbfd2d5c7adcd0e60f/m "wercker status")](https://app.wercker.com/project/bykey/09ee66ec76d4aecbfd2d5c7adcd0e60f)
 [![Coverage Status](https://img.shields.io/coveralls/jukra/web-tweak-n-optimize.svg)](https://coveralls.io/r/jukra/web-tweak-n-optimize?branch=master)
