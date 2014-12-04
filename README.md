@@ -5,7 +5,7 @@ web-tweak-n-optimize
 [![wercker status](https://app.wercker.com/status/09ee66ec76d4aecbfd2d5c7adcd0e60f/m "wercker status")](https://app.wercker.com/project/bykey/09ee66ec76d4aecbfd2d5c7adcd0e60f)
 [![Coverage Status](https://img.shields.io/coveralls/jukra/web-tweak-n-optimize.svg)](https://coveralls.io/r/jukra/web-tweak-n-optimize?branch=master)
 
-Done so far:
+Features:
 - Minify css, js and html files
 - Show result (file sizes before and after) in test
 - Magical one line option which does everything for you
@@ -15,7 +15,10 @@ Done so far:
 
 Features usable with gulp:
 - Specify output folder
-- Linting before optimizing, if ok then continue (option)
+- Linting before optimizing, if ok then continue (eslint in pipe)
+
+Disregarded features:
+- Image grayscaling, generating thumbs etc. (out of project scope, which is focusing on optimization)
 
 License:
 - MIT
