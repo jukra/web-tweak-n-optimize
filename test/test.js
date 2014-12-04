@@ -30,11 +30,16 @@ exports.testMinifier = function (test) {
     mc.cssminifer("static");
     mh.htmlminifer("static");
     mi.imageminifer("static");
+    //Same with direct file paths
+    mj.jsminifer("static/sample.js");
+    mc.cssminifer("static/sample.css");
+    mh.htmlminifer("static/sample.html");
+    mi.imageminifer("static/doge.jpg");
     console.log("Test data done!");
     console.log("");
     test.expect(1);
     var filenames = fs.readdirSync("static");
-    var minifiedFilenames = fs.readdirSync("static/min/");
+    var minifiedFilenames = fs.readdirSync("min");
     var totalFileSize = 0;
     var totalMinifiedSize = 0;
     for (var i in filenames) {
@@ -45,7 +50,7 @@ exports.testMinifier = function (test) {
         parseInt(totalFileSize = totalFileSize + ws["size"]);
     }
     for (var i2 in minifiedFilenames) {
-        var fullpath2 = "static/min/" + minifiedFilenames[i2];
+        var fullpath2 = "min/" + minifiedFilenames[i2];
         console.log(fullpath2);
         var wm = fs.statSync(fullpath2);
         console.log(wm["size"] + " bytes");
