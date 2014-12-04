@@ -23,17 +23,18 @@ var fs = require("fs");
 var mc = require("../modules/minify-css.js");
 var mj = require("../modules/minify-js.js");
 var mh = require("../modules/minify-html.js");
+var mi = require("../modules/minify-images.js");
 
 exports.testMinifier = function (test) {
     mj.jsminifer("static");
     mc.cssminifer("static");
     mh.htmlminifer("static");
+    mi.imageminifer("static");
     console.log("Test data done!");
     console.log("");
     test.expect(1);
     var filenames = fs.readdirSync("static");
     var minifiedFilenames = fs.readdirSync("static/min/");
-
     var totalFileSize = 0;
     var totalMinifiedSize = 0;
     for (var i in filenames) {
@@ -61,6 +62,7 @@ exports.testMinifier = function (test) {
     if (totalMinifiedSize < totalFileSize) {
         test.ok(true, "Minify OK");
         console.log("Minified files are indeed smaller. Test OK!");
+        console.log("");
     } else {
         test.ok(false, "Minify not OK");
         console.log("Minified files are NOT smaller. Test FAILS!");

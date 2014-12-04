@@ -4,6 +4,7 @@ var pjson = require('./package.json');
 var mc = require("./modules/minify-css.js");
 var mj = require("./modules/minify-js.js");
 var mh = require("./modules/minify-html.js");
+var mi = require("./modules/minify-images.js");
 var readline = require("readline");
 var rl = readline.createInterface({
     input: process.stdin,
@@ -44,6 +45,11 @@ var opts = require("nomnom")
         flag: true,
         help: 'Minifies only css files'
     })
+    .option('minifyimages', {
+        abbr: 'o',
+        flag: true,
+        help: 'Minifies only image files'
+    })
     .option('version', {
         abbr: 'V',
         flag: true,
@@ -56,7 +62,7 @@ var opts = require("nomnom")
 if (opts.minifyall) {
     printHeader();
     optionselected = true;
-    console.log("Selected the ultimate minifier...");
+    console.log("Selected the ultimate minifer...");
     rl.question("Source path: ", function (answer) {
         mj.jsminifer(answer);
         mc.cssminifer(answer);
@@ -68,7 +74,7 @@ if (opts.minifyall) {
 if (opts.minifyhtml) {
     printHeader();
     optionselected = true;
-    console.log("Selected HTML minier...");
+    console.log("Selected HTML minifer...");
     rl.question("Source path: ", function (answer) {
         mh.htmlminifer(answer);
         rl.close();
@@ -78,7 +84,7 @@ if (opts.minifyhtml) {
 if (opts.minifyjs) {
     printHeader();
     optionselected = true;
-    console.log("Selected JS minier...");
+    console.log("Selected JS minifer...");
     rl.question("Source path: ", function (answer) {
         mj.jsminifer(answer);
         rl.close();
@@ -88,9 +94,18 @@ if (opts.minifyjs) {
 if (opts.minifycss) {
     printHeader();
     optionselected = true;
-    console.log("Selected CSS minier...");
+    console.log("Selected CSS minifer...");
     rl.question("Source path: ", function (answer) {
         mc.cssminifer(answer);
+        rl.close();
+    });
+}
+if (opts.minifyimages) {
+    printHeader();
+    optionselected = true;
+    console.log("Selected image minifer...");
+    rl.question("Source path: ", function (answer) {
+        mi.imageminifer(answer);
         rl.close();
     });
 }

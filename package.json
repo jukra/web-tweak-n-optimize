@@ -1,6 +1,6 @@
 {
   "name": "web-tweak-n-optimize",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Simple app which can optimize your image, css, js and html files. Also editing pictures to grayscale, thumbs etc.",
   "main": "app.js",
   "scripts": {
@@ -30,6 +30,7 @@
     "coveralls": "^2.11.2",
     "gulp": "^3.8.10",
     "html-minifier": "^0.6.9",
+    "imagemin": "^3.1.0",
     "minify": "^1.3.0",
     "nomnom": "^1.8.0"
   },
