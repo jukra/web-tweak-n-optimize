@@ -1,7 +1,7 @@
 {
   "name": "web-tweak-n-optimize",
   "version": "0.4.0",
-  "description": "Simple app which can optimize your image, css, js and html files. Also editing pictures to grayscale, thumbs etc.",
+  "description": "Simple app which can optimize your image, css, js and html files.",
   "main": "app.js",
   "scripts": {
     "test": "nodeunit test && eslint *.js && eslint modules",

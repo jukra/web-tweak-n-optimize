@@ -11,18 +11,11 @@ Done so far:
 - Magical one line option which does everything for you
 - Commandline menu interface (done with options, try node app.js --help)
 - Specify which files will be edited
-
-Planned features:
-
-- Specify output folder
-- Tweak image files to thumbs, grayscale etc.
 - Optimize images
-- Linting before optimizing, if ok then continue (option)
-- Usable as a taskrunner plugin
 
-Planned use as a plugin with taskrunner:
-- On detected file changes on the web project folder, run minifies and image optimization on changed files
-- User can setup the dist folder and minifed file names
+Features usable with gulp:
+- Specify output folder
+- Linting before optimizing, if ok then continue (option)
 
 License:
 - MIT
@@ -43,3 +36,7 @@ Vesion 0.3.0:
 - Added more testing.
 - Addded istanbul, coveralls, and travis.
 - Added codecoverage badge to this readme file.
+
+Vesion 0.4.0:
+- Added image optimization and more testing
+- Prepared project for task runner use
