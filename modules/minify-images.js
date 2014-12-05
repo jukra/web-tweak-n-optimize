@@ -35,7 +35,7 @@ exports.imageminifer = function (answer) {
 
         var imagemin = new Imagemin()
             .src(answer + '/*.{gif,jpg,png,svg}')
-            .dest(answer + '/min')
+            .dest('min')
             .use(Imagemin.jpegtran({ progressive: true }));
 
         imagemin.run(function (err, files) {

@@ -67,6 +67,7 @@ if (opts.minifyall) {
         mj.jsminifer(answer);
         mc.cssminifer(answer);
         mh.htmlminifer(answer);
+        mi.imageminifer(answer);
         rl.close();
     });
 

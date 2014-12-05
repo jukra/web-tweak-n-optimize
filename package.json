@@ -1,6 +1,6 @@
 {
   "name": "web-tweak-n-optimize",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Simple app which can optimize your image, css, js and html files.",
   "main": "app.js",
   "scripts": {
