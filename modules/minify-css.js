@@ -18,6 +18,7 @@ exports.cssminifer = function (answer) {
             } else {
                 streamWrite.write(stream);
                 streamWrite.end();
+                return minfile;
             }
         });
     }

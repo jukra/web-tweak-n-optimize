@@ -22,6 +22,7 @@ exports.htmlminifer = function (answer) {
             var streamWrite = fs.createWriteStream(minfile);
             streamWrite.write(result);
             streamWrite.end();
+            return minfile;
         });
     }
     else {
