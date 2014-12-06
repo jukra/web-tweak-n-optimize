@@ -1,13 +1,15 @@
 web-tweak-n-optimize
 ====================
-> Simple app which can optimize your image, css, js and html files.
+> Simple app which can optimize your image, css, js and html files (school project).
+> Gulp plugin available [gulp-web-tweak-n-optimize](http://github.com/jukra/gulp-web-tweak-n-optimize)
 
 [![wercker status](https://app.wercker.com/status/09ee66ec76d4aecbfd2d5c7adcd0e60f/m "wercker status")](https://app.wercker.com/project/bykey/09ee66ec76d4aecbfd2d5c7adcd0e60f)
 [![Coverage Status](https://img.shields.io/coveralls/jukra/web-tweak-n-optimize.svg)](https://coveralls.io/r/jukra/web-tweak-n-optimize?branch=master)
 
 NOTE: Make sure ImageMagick is installed on your system if you want to use the image optimizations.
 
-Features:
+## Features:
+
 - Minify css, js and html files
 - Show result (file sizes before and after) in test
 - Magical one line option which does everything for you
@@ -15,16 +17,21 @@ Features:
 - Specify which files will be edited
 - Optimize images
 
-Features usable with gulp plugin:
+## Features usable with gulp plugin:
+
 - Specify output folder
 - Linting before optimizing, if ok then continue (eslint in pipe)
 
-Disregarded features:
+## Disregarded features:
+
 - Image grayscaling, generating thumbs etc. (out of this projects scope, which is focusing on optimization)
 
-License:
+## License:
+
 - MIT
 - [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
+
+## Version history:
 
 Version 0.1.0:
 - Init node.js with depencies
