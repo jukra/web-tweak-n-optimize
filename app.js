@@ -62,7 +62,7 @@ var opts = require("nomnom")
     .option('minifyall', {
         abbr: 'a',
         flag: true,
-        help: 'Minifies html, js and css files'
+        help: 'Minifies html, js, css and image files'
     })
     .option('minifyjs', {
         abbr: 'j',
