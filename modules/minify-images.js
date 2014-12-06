@@ -20,11 +20,11 @@ exports.imageminifer = function (answer, createfiles, callback) {
             .use(Imagemin.gifsicle({ interlaced: true }))
             .use(Imagemin.jpegtran({ progressive: true }))
             .use(Imagemin.pngquant());
-        imagemin.run(function (err, files, stream) {
+        imagemin.run(function (err, files) {
             if (err) {
             console.log(err, files);
             }
-            callback(stream);
+            callback(files);
         });
     }
     else {
