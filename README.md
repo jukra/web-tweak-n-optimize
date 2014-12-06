@@ -9,6 +9,21 @@ web-tweak-n-optimize
 
 NOTE: Make sure ImageMagick is installed on your system if you want to use the image optimizations.
 
+## Usage:
+
+```
+Usage: node app.js [options]
+
+Options:
+   -h, --help           Lists this message of all commands available
+   -a, --minifyall      Minifies html, js and css files
+   -j, --minifyjs       Minifies only js files
+   -w, --minifyhtml     Minifies only html files
+   -c, --minifycss      Minifies only css files
+   -o, --minifyimages   Minifies only image files
+   -V, --version        Show version number
+```
+
 ## Features:
 
 - Minify css, js and html files
