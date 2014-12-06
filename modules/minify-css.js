@@ -1,4 +1,4 @@
-exports.cssminifer = function (answer) {
+exports.cssminifer = function (answer, callback) {
     fs = require('fs');
     var minify = require('minify');
     //Check if folder or direct file
@@ -9,20 +9,19 @@ exports.cssminifer = function (answer) {
         var filename = answer.split('/')[1];
         var minfile = "min/" + filename;
         var file = answer;
+        var content;
         minify(file, {
             returnStream: true
         }, function (error, stream) {
-            var streamWrite = fs.createWriteStream(minfile);
             if (error) {
-                console.error(error.message);
+                console.log(error.message);
             } else {
-                streamWrite.write(stream);
-                streamWrite.end();
-                return minfile;
+                content = stream.toString();
+                var buffer = new Buffer(content);
+                callback(buffer);
             }
         });
-    }
-    else {
+    } else {
         var filenames = fs.readdirSync(answer);
         var cssfiles = [];
         for (var i in filenames) {
@@ -41,7 +40,7 @@ exports.cssminifer = function (answer) {
             }, function (error, stream) {
                 var streamWrite = fs.createWriteStream(minfile);
                 if (error) {
-                    console.error(error.message);
+                    console.log(error.message);
                 } else {
                     streamWrite.write(stream);
                     streamWrite.end();
@@ -49,6 +48,4 @@ exports.cssminifer = function (answer) {
             });
         }
     }
-    console.log("All done!");
-    console.log("");
 };

@@ -19,22 +19,54 @@
 */
 //Using sample data in static folder for testing
 
+//Requires
 var fs = require("fs");
 var mc = require("../modules/minify-css.js");
 var mj = require("../modules/minify-js.js");
 var mh = require("../modules/minify-html.js");
 var mi = require("../modules/minify-images.js");
 
+// Functions to handle callbacks:
+function minifyHtml(answer) {
+    var result = mh.htmlminifer(answer);
+    if (result !== undefined) {
+        var filename = answer.replace(/^.*[\\\/]/, '');
+        var streamWrite = fs.createWriteStream('min/' + filename);
+        streamWrite.write(result);
+        streamWrite.end();
+    }
+}
+function minifyJs(answer) {
+    mj.jsminifer(answer, function (result) {
+        var filename = answer.replace(/^.*[\\\/]/, '');
+        var streamWrite = fs.createWriteStream('min/' + filename);
+        streamWrite.write(result);
+        streamWrite.end();
+
+    });
+}
+function minifyCss(answer) {
+    mc.cssminifer(answer, function (result) {
+        var filename = answer.replace(/^.*[\\\/]/, '');
+        var streamWrite = fs.createWriteStream('min/' + filename);
+        streamWrite.write(result);
+        streamWrite.end();
+    });
+}
+function minifyImage(answer) {
+    mi.imageminifer(answer, true, function () {});
+}
+
+//The actual test
 exports.testMinifier = function (test) {
     mj.jsminifer("static");
     mc.cssminifer("static");
     mh.htmlminifer("static");
     mi.imageminifer("static");
-    //Same with direct file paths
-    mj.jsminifer("static/sample.js");
-    mc.cssminifer("static/sample.css");
-    mh.htmlminifer("static/sample.html");
-    mi.imageminifer("static/doge.jpg");
+    minifyJs("static/sample.js");
+    minifyCss("static/sample.css");
+    minifyHtml("static/sample.html");
+    minifyImage("static/bigpng.png");
     console.log("Test data done!");
     console.log("");
     test.expect(1);

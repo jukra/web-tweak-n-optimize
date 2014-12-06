@@ -1,6 +1,13 @@
-exports.imageminifer = function (answer) {
+exports.imageminifer = function (answer, createfiles, callback) {
     fs = require('fs');
     var Imagemin = require('imagemin');
+    var dest;
+    if (createfiles === true){
+        dest = "min";
+    }
+    else {
+        dest = null;
+    }
     //Check if folder or direct file
     var re = /(?:\.([^.]+))?$/;
     var answerext = re.exec(answer)[1];
@@ -8,13 +15,16 @@ exports.imageminifer = function (answer) {
         console.log("Direct file path");
         var imagemin = new Imagemin()
             .src(answer)
-            .dest('min')
-            .use(Imagemin.jpegtran({ progressive: true }));
-        imagemin.run(function (err, files) {
+            .dest(dest)
+            .use(Imagemin.svgo())
+            .use(Imagemin.gifsicle({ interlaced: true }))
+            .use(Imagemin.jpegtran({ progressive: true }))
+            .use(Imagemin.pngquant());
+        imagemin.run(function (err, files, stream) {
             if (err) {
-                console.log(files);
-                throw err;
+            console.log(err, files);
             }
+            callback(stream);
         });
     }
     else {
@@ -38,16 +48,8 @@ exports.imageminifer = function (answer) {
             .dest('min')
             .use(Imagemin.svgo())
             .use(Imagemin.gifsicle({ interlaced: true }))
-            .use(Imagemin.optipng({ optimizationLevel: 3 }))
-            .use(Imagemin.jpegtran({ progressive: true }));
-
-        imagemin.run(function (err, files) {
-            if (err) {
-                console.log(files);
-                throw err;
-            }
-        });
+            .use(Imagemin.jpegtran({ progressive: true }))
+            .use(Imagemin.pngquant());
+        imagemin.run();
     }
-    console.log("All done!");
-    console.log("");
 };

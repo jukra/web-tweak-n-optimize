@@ -1,4 +1,4 @@
-exports.jsminifer = function (answer) {
+exports.jsminifer = function (answer, callback) {
     fs = require('fs');
     var minify = require('minify');
     //Check if folder or direct file
@@ -9,19 +9,19 @@ exports.jsminifer = function (answer) {
         var filename = answer.split('/')[1];
         var minfile = "min/" + filename;
         var file = answer;
+        var content;
         minify(file, {
             returnStream: true
         }, function (error, stream) {
-            var streamWrite = fs.createWriteStream(minfile);
             if (error) {
-                console.error(error.message);
+                console.log(error.message);
             } else {
-                streamWrite.write(stream);
-                streamWrite.end();
-                return minfile;
+                content = stream.toString();
+                var buffer = new Buffer(content);
+                callback(buffer);
             }
         });
-        }
+    }
     else {
         var filenames = fs.readdirSync(answer);
         var jsfiles = [];
@@ -41,7 +41,7 @@ exports.jsminifer = function (answer) {
             }, function (error, stream) {
                 var streamWrite = fs.createWriteStream(minfile);
                 if (error) {
-                    console.error(error.message);
+                    console.log(error.message);
                 } else {
                     streamWrite.write(stream);
                     streamWrite.end();
@@ -49,6 +49,4 @@ exports.jsminifer = function (answer) {
             });
         }
     }
-    console.log("All done!");
-    console.log("");
 };

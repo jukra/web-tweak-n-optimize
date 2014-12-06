@@ -5,6 +5,8 @@ web-tweak-n-optimize
 [![wercker status](https://app.wercker.com/status/09ee66ec76d4aecbfd2d5c7adcd0e60f/m "wercker status")](https://app.wercker.com/project/bykey/09ee66ec76d4aecbfd2d5c7adcd0e60f)
 [![Coverage Status](https://img.shields.io/coveralls/jukra/web-tweak-n-optimize.svg)](https://coveralls.io/r/jukra/web-tweak-n-optimize?branch=master)
 
+NOTE: Make sure ImageMagick is installed on your system if you want to use the image optimizations.
+
 Features:
 - Minify css, js and html files
 - Show result (file sizes before and after) in test
@@ -33,14 +35,18 @@ Vesion 0.2.0:
 - Gulp, nodeunit, testing, wercker and minify functions
 
 Vesion 0.3.0:
-- Added possibility to run the tool with different settings (node app.js --help to view all the commands).
-- Minifies done without gulp for the future.
-- Added linting without gulp also.
-- Added more testing.
-- Addded istanbul, coveralls, and travis.
-- Added codecoverage badge to this readme file.
+- Added possibility to run the tool with different settings (node app.js --help to view all the commands)
+- Minifies done without gulp for the future
+- Added linting without gulp also
+- Added more testing
+- Addded istanbul, coveralls, and travis
+- Added codecoverage badge to this readme file
 
 Vesion 0.4.0:
 - Added image optimization and more testing
 - Prepared project for task runner use
 - Added ability to give direct path to source file instead of just folder
+
+Vesion 0.5.0:
+- Changed the way files are created, now using asynchronous functions and buffers (for gulp).
+- Small fixes here and there

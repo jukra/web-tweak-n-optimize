@@ -4,28 +4,22 @@ exports.htmlminifer = function (answer) {
     //Check if folder or direct file
     var re = /(?:\.([^.]+))?$/;
     var answerext = re.exec(answer)[1];
+    var result;
     if (answerext !== undefined) {
         var filename = answer.split('/')[1];
         var minfile = "min/" + filename;
         var file = answer;
         console.log("Direct file path");
-        fs.readFile(file, 'utf8', function (err, data) {
-            if (err) {
-                return console.log(err);
-            }
-            var result = minifyh(data, {
-                removeComments: true,
-                collapseWhitespace: true,
-                minifyJS: true,
-                minifyCSS: true
-            });
-            var streamWrite = fs.createWriteStream(minfile);
-            streamWrite.write(result);
-            streamWrite.end();
-            return minfile;
+        var data = fs.readFileSync(file, 'utf8');
+        result = minifyh(data, {
+            removeComments: true,
+            collapseWhitespace: true,
+            minifyJS: true,
+            minifyCSS: true
         });
-    }
-    else {
+        var buffer = new Buffer(result);
+        return buffer;
+    } else {
         var filenames = fs.readdirSync(answer);
         var htmlfiles = [];
         for (var i in filenames) {
@@ -43,7 +37,7 @@ exports.htmlminifer = function (answer) {
                 if (err) {
                     return console.log(err);
                 }
-                var result = minifyh(data, {
+                result = minifyh(data, {
                     removeComments: true,
                     collapseWhitespace: true,
                     minifyJS: true,
@@ -54,8 +48,7 @@ exports.htmlminifer = function (answer) {
                 streamWrite.end();
             });
         }
+        console.log("All done!");
     }
-    console.log("All done!");
     console.log("");
-
 };
