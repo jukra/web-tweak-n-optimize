@@ -16,7 +16,7 @@ Usage: node app.js [options]
 
 Options:
    -h, --help           Lists this message of all commands available
-   -a, --minifyall      Minifies html, js and css files
+   -a, --minifyall      Minifies html, js, css and image files
    -j, --minifyjs       Minifies only js files
    -w, --minifyhtml     Minifies only html files
    -c, --minifycss      Minifies only css files
