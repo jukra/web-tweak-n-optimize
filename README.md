@@ -1,6 +1,7 @@
 web-tweak-n-optimize
 ====================
 > Simple app which can optimize your image, css, js and html files (school project).
+
 > Gulp plugin available [gulp-web-tweak-n-optimize](http://github.com/jukra/gulp-web-tweak-n-optimize)
 
 [![wercker status](https://app.wercker.com/status/09ee66ec76d4aecbfd2d5c7adcd0e60f/m "wercker status")](https://app.wercker.com/project/bykey/09ee66ec76d4aecbfd2d5c7adcd0e60f)
