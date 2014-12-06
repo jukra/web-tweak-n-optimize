@@ -75,4 +75,8 @@ Vesion 0.5.0:
 - Small fixes here and there
 
 Version 0.9.0:
-- Small fixes here and there, getting ready for next release.
+- Small fixes here and there, getting ready for next release
+
+Version 1.0.0:
+- First real version release, everything should be working
+- Usable as gulp plugin [gulp-web-tweak-n-optimize](http://github.com/jukra/gulp-web-tweak-n-optimize)
