@@ -73,3 +73,6 @@ Vesion 0.4.0:
 Vesion 0.5.0:
 - Changed the way files are created, now using asynchronous functions and buffers (for gulp).
 - Small fixes here and there
+
+Version 0.9.0:
+- Small fixes here and there, getting ready for next release.
