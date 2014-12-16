@@ -29,23 +29,23 @@ var mi = require("../modules/minify-images.js");
 
 //The actual test
 exports.testMinifier = function (test) {
-    mj.jsminifer("static");
-    mc.cssminifer("static");
-    mh.htmlminifer("static");
-    mi.imageminifer("static");
-    cb.minifyJs("static/sample.js");
-    cb.minifyCss("static/sample.css");
-    cb.minifyHtml("static/sample.html");
-    cb.minifyImage("static/bigpng.png");
+    mj.jsminifer("samples");
+    mc.cssminifer("samples");
+    mh.htmlminifer("samples");
+    mi.imageminifer("samples");
+    cb.minifyJs("samples/sample.js");
+    cb.minifyCss("samples/sample.css");
+    cb.minifyHtml("samples/sample.html");
+    cb.minifyImage("samples/bigpng.png");
     console.log("Test data done!");
     console.log("");
     test.expect(1);
-    var filenames = fs.readdirSync("static");
+    var filenames = fs.readdirSync("samples");
     var minifiedFilenames = fs.readdirSync("min");
     var totalFileSize = 0;
     var totalMinifiedSize = 0;
     for (var i in filenames) {
-        var fullpath = "static/" + filenames[i];
+        var fullpath = "samples/" + filenames[i];
         var ws = fs.statSync(fullpath);
         console.log(fullpath);
         console.log(ws["size"] + " bytes");
