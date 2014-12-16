@@ -16,7 +16,6 @@
   "files": [
     "LICENSE",
     "README.md",
-    "static",
     "test",
     "modules",
     "app.js"
