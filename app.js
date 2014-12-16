@@ -1,49 +1,12 @@
 "use strict";
 var pjson = require('./package.json');
-var mc = require("./modules/minify-css.js");
-var mj = require("./modules/minify-js.js");
-var mh = require("./modules/minify-html.js");
-var mi = require("./modules/minify-images.js");
+var cb = require("./cbhandlers.js");
 var readline = require("readline");
 var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 var optionselected = false;
-
-function minifyHtml(answer) {
-    var result = mh.htmlminifer(answer);
-    if (result !== undefined) {
-        var filename = answer.replace(/^.*[\\\/]/, '');
-        var streamWrite = fs.createWriteStream('min/' + filename);
-        streamWrite.write(result);
-        streamWrite.end();
-    }
-}
-
-function minifyJs(answer) {
-    mj.jsminifer(answer, function (result) {
-        var filename = answer.replace(/^.*[\\\/]/, '');
-        var streamWrite = fs.createWriteStream('min/' + filename);
-        streamWrite.write(result);
-        streamWrite.end();
-
-    });
-}
-
-function minifyCss(answer) {
-    mc.cssminifer(answer, function (result) {
-        var filename = answer.replace(/^.*[\\\/]/, '');
-        var streamWrite = fs.createWriteStream('min/' + filename);
-        streamWrite.write(result);
-        streamWrite.end();
-    });
-}
-
-function minifyImage(answer) {
-    mi.imageminifer(answer, true, function () {});
-}
-
 
 function printHeader() {
     console.log("");
@@ -98,10 +61,10 @@ if (opts.minifyall) {
     optionselected = true;
     console.log("Selected the ultimate minifer...");
     rl.question("Source path: ", function (answer) {
-        minifyJs(answer);
-        minifyCss(answer);
-        minifyHtml(answer);
-        minifyImage(answer);
+        cb.minifyJs(answer);
+        cb.minifyCss(answer);
+        cb.minifyHtml(answer);
+        cb.minifyImage(answer);
         rl.close();
     });
 
@@ -111,7 +74,7 @@ if (opts.minifyhtml) {
     optionselected = true;
     console.log("Selected HTML minifer...");
     rl.question("Source path: ", function (answer) {
-        minifyHtml(answer);
+        cb.minifyHtml(answer);
         rl.close();
     });
 
@@ -121,7 +84,7 @@ if (opts.minifyjs) {
     optionselected = true;
     console.log("Selected JS minifer...");
     rl.question("Source path: ", function (answer) {
-        minifyJs(answer);
+        cb.minifyJs(answer);
         rl.close();
     });
 
@@ -131,7 +94,7 @@ if (opts.minifycss) {
     optionselected = true;
     console.log("Selected CSS minifer...");
     rl.question("Source path: ", function (answer) {
-        minifyCss(answer);
+        cb.minifyCss(answer);
         rl.close();
     });
 }
@@ -140,7 +103,7 @@ if (opts.minifyimages) {
     optionselected = true;
     console.log("Selected image minifer...");
     rl.question("Source path: ", function (answer) {
-        minifyImage(answer);
+        cb.minifyImage(answer);
         rl.close();
     });
 }

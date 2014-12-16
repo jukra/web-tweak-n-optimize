@@ -10,6 +10,8 @@ exports.htmlminifer = function (answer) {
         var minfile = "min/" + filename;
         var file = answer;
         console.log("Direct file path");
+        console.log("Minifying following file:");
+        console.log(filename);
         var data = fs.readFileSync(file, 'utf8');
         result = minifyh(data, {
             removeComments: true,

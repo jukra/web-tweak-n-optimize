@@ -6,7 +6,9 @@ exports.jsminifer = function (answer, callback) {
     var answerext = re.exec(answer)[1];
     if (answerext !== undefined) {
         console.log("Direct file path");
+        console.log("Minifying following file:");
         var filename = answer.split('/')[1];
+        console.log(filename);
         var minfile = "min/" + filename;
         var file = answer;
         var content;
